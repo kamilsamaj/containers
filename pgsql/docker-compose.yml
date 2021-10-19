@@ -1,0 +1,15 @@
+version: '3'
+services:
+
+  ### Postgres container
+  pgsql:
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgsql-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: root
+
+volumes:
+  pgsql-data:
