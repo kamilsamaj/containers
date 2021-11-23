@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  ### MariaDB container
+  mariadb:
+    image: mariadb:10
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb-volume:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_ROOT_HOST: '%'
+
+volumes:
+  mariadb-volume:
