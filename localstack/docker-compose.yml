@@ -4,7 +4,6 @@ services:
 
   localstack:
     image: localstack/localstack
-    restart: always
     environment:
       - SERVICES=kms
     network_mode: host
