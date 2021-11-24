@@ -40,9 +40,7 @@ services:
 
 volumes:
   jenkins-certs:
-    driver: overlay2
   jenkins-data:
-    driver: overlay2
 
 networks:
   jenkins:
