@@ -1,0 +1,16 @@
+version: '3'
+services:
+  minio:
+    image: quay.io/minio/minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio-volume:/data
+    environment:
+      MINIO_ROOT_USER: AKIAAKIAAKIAAKIAAKIA
+      MINIO_ROOT_PASSWORD: 4ghm4L1dkH4N7ZKHPz8Khk5guOtuPl9htinGZa
+    command: "server /data --console-address :9001"
+
+volumes:
+  minio-volume:
