@@ -1,9 +1,13 @@
 version: '3'
 
 services:
-
   localstack:
     image: localstack/localstack
     environment:
-      - SERVICES=kms
+      - SERVICES=kms,kinesis,lambda,sqs,dynamodb,s3,cloudwatch,sns
+      - DATA_DIR=/tmp/localstack/data
+      - PORT_WEB_UI=8888
     network_mode: host
+    volumes:
+      - "${HOME}/.localstack/data:/tmp/localstack"
+      - '/var/run/docker.sock:/var/run/docker.sock'
